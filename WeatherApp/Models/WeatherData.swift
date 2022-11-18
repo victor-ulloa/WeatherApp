@@ -8,14 +8,14 @@
 import Foundation
 
 class WeatherData: Codable {
-    let temperature: Double
-    let feelsLike: Double
-    let minTemperature: Double
-    let maxTemperature: Double
-    let pressure: Double
-    let humidity: Double
-    let seaLevel: Double
-    let groundLevel: Double
+    let temperature: Double?
+    let feelsLike: Double?
+    let minTemperature: Double?
+    let maxTemperature: Double?
+    let pressure: Double?
+    let humidity: Double?
+    let seaLevel: Double?
+    let groundLevel: Double?
     
     enum CodingKeys: String, CodingKey {
         case temperature = "temp"

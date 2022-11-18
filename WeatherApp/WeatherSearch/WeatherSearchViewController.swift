@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class WeatherSearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
     let searchController = UISearchController(searchResultsController: ResultsViewController())
+    let viewModel = WeatherSearchViewModel()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,7 @@ class WeatherSearchViewController: UIViewController, UISearchResultsUpdating, UI
         searchController.searchBar.placeholder = "Location..."
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
     }
     
     
@@ -36,12 +41,12 @@ class WeatherSearchViewController: UIViewController, UISearchResultsUpdating, UI
         guard let text = searchController.searchBar.text else {
             return
         }
+        viewModel.searchLocations(text: text)
         
-        let viewController = searchController.searchResultsController as? ResultsViewController
-        viewController?.view.backgroundColor = .systemYellow
+        let searchResultsController = searchController.searchResultsController as? ResultsViewController
+        searchResultsController?.viewModel = viewModel
+        searchResultsController?.bindData()
     }
-    
-    
     
 }
 

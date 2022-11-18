@@ -8,9 +8,9 @@
 import Foundation
 
 class Wind: Codable {
-    let speed: Double
-    let degrees: Double
-    let gust: Double
+    let speed: Double?
+    let degrees: Double?
+    let gust: Double?
     
     enum CodingKeys: String, CodingKey {
         case speed

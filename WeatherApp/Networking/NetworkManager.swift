@@ -73,10 +73,10 @@ struct NetworkManager {
         task.resume()
     }
     
-    func getWeather(lat: Double, lon: Double, completionHandler: @escaping (WeatherResponse) -> Void) {
+    func getWeather(latitude: Double, longitude: Double, completionHandler: @escaping (WeatherResponse) -> Void) {
         let queryItems = [
-            URLQueryItem(name: "lat", value: String(lat)),
-            URLQueryItem(name: "lon", value: String(lat)),
+            URLQueryItem(name: "lat", value: String(latitude)),
+            URLQueryItem(name: "lon", value: String(longitude)),
             URLQueryItem(name: "appid", value: NetworkManager.APIKey),
             URLQueryItem(name: "units", value: "metric")
         ]

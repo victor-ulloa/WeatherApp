@@ -10,7 +10,7 @@ import Foundation
 class WeatherResponse: Codable {
     let coordinates: Coordinates
     let weather: [Weather]
-    let weatherData: WeatherData
+    let weatherData: WeatherData?
     let visibility: Int?
     let wind: Wind?
     let snow: Snow?
