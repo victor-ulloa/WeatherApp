@@ -17,8 +17,6 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBlue
-        
         
         tableView.frame = CGRect(x: 0, y: view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0, width: self.view.frame.width, height: self.view.frame.height)
         tableView.dataSource = self

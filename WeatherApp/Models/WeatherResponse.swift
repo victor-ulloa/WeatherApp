@@ -27,6 +27,6 @@ class WeatherResponse: Codable {
         case snow
         case systemData = "sys"
         case timezone
-        case cityName = "city"
+        case cityName = "name"
     }
 }

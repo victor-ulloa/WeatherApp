@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import CoreLocation
 
 final class WeatherSearchViewModel {
     
@@ -35,6 +36,8 @@ final class WeatherSearchViewModel {
     }
     
     func getWeatherInformation(latitude: Double, longitude: Double) {
+        print(latitude)
+        print(longitude)
         networkManager.getWeather(latitude: latitude, longitude: longitude) { [weak self] response in
             self?.weatherResponse = response
         }
