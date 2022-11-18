@@ -18,6 +18,16 @@
 		0796433A2925BA5F00AC3236 /* WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079643392925BA5F00AC3236 /* WeatherAppUITestsLaunchTests.swift */; };
 		079643492925DD7900AC3236 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079643482925DD7900AC3236 /* NetworkManager.swift */; };
 		0796434D2925F34C00AC3236 /* LocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796434C2925F34C00AC3236 /* LocationsResponse.swift */; };
+		0796435229272C1800AC3236 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796435129272C1800AC3236 /* WeatherResponse.swift */; };
+		07964354292751AB00AC3236 /* LocalNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964353292751AB00AC3236 /* LocalNames.swift */; };
+		07964356292751E000AC3236 /* SystemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964355292751E000AC3236 /* SystemData.swift */; };
+		079643582927526C00AC3236 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079643572927526C00AC3236 /* Rain.swift */; };
+		0796435A2927527B00AC3236 /* Snow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079643592927527B00AC3236 /* Snow.swift */; };
+		0796435C2927529300AC3236 /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796435B2927529300AC3236 /* Clouds.swift */; };
+		0796435E292752BD00AC3236 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796435D292752BD00AC3236 /* Wind.swift */; };
+		07964360292752D400AC3236 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796435F292752D400AC3236 /* Weather.swift */; };
+		07964362292752FA00AC3236 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964361292752FA00AC3236 /* WeatherData.swift */; };
+		079643642927531300AC3236 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079643632927531300AC3236 /* Coordinates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +63,16 @@
 		079643392925BA5F00AC3236 /* WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		079643482925DD7900AC3236 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0796434C2925F34C00AC3236 /* LocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsResponse.swift; sourceTree = "<group>"; };
+		0796435129272C1800AC3236 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		07964353292751AB00AC3236 /* LocalNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNames.swift; sourceTree = "<group>"; };
+		07964355292751E000AC3236 /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
+		079643572927526C00AC3236 /* Rain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
+		079643592927527B00AC3236 /* Snow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snow.swift; sourceTree = "<group>"; };
+		0796435B2927529300AC3236 /* Clouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
+		0796435D292752BD00AC3236 /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
+		0796435F292752D400AC3236 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		07964361292752FA00AC3236 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		079643632927531300AC3236 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +165,16 @@
 			isa = PBXGroup;
 			children = (
 				0796434C2925F34C00AC3236 /* LocationsResponse.swift */,
+				0796435129272C1800AC3236 /* WeatherResponse.swift */,
+				07964353292751AB00AC3236 /* LocalNames.swift */,
+				07964355292751E000AC3236 /* SystemData.swift */,
+				079643572927526C00AC3236 /* Rain.swift */,
+				079643592927527B00AC3236 /* Snow.swift */,
+				0796435B2927529300AC3236 /* Clouds.swift */,
+				0796435D292752BD00AC3236 /* Wind.swift */,
+				0796435F292752D400AC3236 /* Weather.swift */,
+				07964361292752FA00AC3236 /* WeatherData.swift */,
+				079643632927531300AC3236 /* Coordinates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,11 +310,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0796435A2927527B00AC3236 /* Snow.swift in Sources */,
+				07964354292751AB00AC3236 /* LocalNames.swift in Sources */,
+				07964362292752FA00AC3236 /* WeatherData.swift in Sources */,
 				0796434D2925F34C00AC3236 /* LocationsResponse.swift in Sources */,
+				0796435C2927529300AC3236 /* Clouds.swift in Sources */,
+				07964356292751E000AC3236 /* SystemData.swift in Sources */,
+				0796435229272C1800AC3236 /* WeatherResponse.swift in Sources */,
 				079643492925DD7900AC3236 /* NetworkManager.swift in Sources */,
 				0796431B2925BA5E00AC3236 /* ViewController.swift in Sources */,
+				079643642927531300AC3236 /* Coordinates.swift in Sources */,
+				07964360292752D400AC3236 /* Weather.swift in Sources */,
+				079643582927526C00AC3236 /* Rain.swift in Sources */,
 				079643172925BA5E00AC3236 /* AppDelegate.swift in Sources */,
 				079643192925BA5E00AC3236 /* SceneDelegate.swift in Sources */,
+				0796435E292752BD00AC3236 /* Wind.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,3 @@ class LocationsResponse: Codable {
         case state
     }
 }
-
-class LocalNames: Codable {
-    let ascii: String?
-}

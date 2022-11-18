@@ -15,7 +15,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        networkManager.fetchLocations(query: "London") { _ in
+        networkManager.getLocations(query: "London") { _ in
+            
+        }
+        
+        networkManager.getWeather(lat: 51.5073219, lon: -0.1276474) { _ in
             
         }
         

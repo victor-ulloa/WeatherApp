@@ -16,7 +16,7 @@ enum HTTPMethod : String {
 }
 
 enum Path : String {
-    case locations = ""
+    case locations = "/data/2.5/weather"
     case weather = "/geo/1.0/direct"
 }
 
@@ -26,7 +26,7 @@ struct NetworkManager {
     static let APIKey = "e60fc6752c621242b66596b4ccabf2f2"
     
     
-    func fetchLocations(query: String, completionHandler: @escaping ([LocationsResponse]) -> Void) {
+    func getLocations(query: String, completionHandler: @escaping ([LocationsResponse]) -> Void) {
         
         let queryItems = [
             URLQueryItem(name: "q", value: query),
@@ -71,26 +71,53 @@ struct NetworkManager {
         }
         
         task.resume()
+    }
+    
+    func getWeather(lat: Double, lon: Double, completionHandler: @escaping (WeatherResponse) -> Void) {
+        let queryItems = [
+            URLQueryItem(name: "lat", value: String(lat)),
+            URLQueryItem(name: "lon", value: String(lat)),
+            URLQueryItem(name: "appid", value: NetworkManager.APIKey),
+            URLQueryItem(name: "units", value: "metric")
+        ]
         
+        guard let url = buildUrl(path: .locations, queryItems: queryItems) else {
+            return
+        }
         
-//        let task_ = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-//            if let error = error {
-//                print("Error with fetching films: \(error)")
-//                return
-//            }
-//
-//            guard let httpResponse = response as? HTTPURLResponse,
-//                  (200...299).contains(httpResponse.statusCode) else {
-//                print("Error with the response, unexpected status code: \(response)")
-//                return
-//            }
-//
-//            if let data = data,
-//               let locationsResponse = try? JSONDecoder().decode(LocationsResponse.self, from: data) {
-//                completionHandler(locationsResponse)
-//            }
-//        })
-//        task.resume()
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data,
+                  let response = response as? HTTPURLResponse,
+                  error == nil
+            else {                                                               // check for fundamental networking error
+                print("error", error ?? URLError(.badServerResponse))
+                return
+            }
+            
+            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
+                print("statusCode should be 2xx, but is \(response.statusCode)")
+                print("response = \(response)")
+                return
+            }
+            
+            do {
+                let weatherResponse = try JSONDecoder().decode(WeatherResponse.self, from: data)
+                completionHandler(weatherResponse)
+            } catch {
+                print(error) // parsing error
+                
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("responseString = \(responseString)")
+                } else {
+                    print("unable to parse response as string")
+                }
+            }
+        }
+        
+        task.resume()
     }
     
     private func buildUrl(path: Path, queryItems: [URLQueryItem]) -> URL? {
