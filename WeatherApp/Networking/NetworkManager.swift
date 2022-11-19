@@ -20,11 +20,15 @@ enum Path : String {
     case weather = "/geo/1.0/direct"
 }
 
-struct NetworkManager {
+protocol NetworkManagerProtocol {
+    func getLocations(query: String, completionHandler: @escaping ([LocationsResponse]) -> Void)
+    func getWeather(latitude: Double, longitude: Double, completionHandler: @escaping (WeatherResponse) -> Void)
+}
+
+struct NetworkManager: NetworkManagerProtocol {
     
     static let baseUrl = "api.openweathermap.org"
     static let APIKey = "e60fc6752c621242b66596b4ccabf2f2"
-    
     
     func getLocations(query: String, completionHandler: @escaping ([LocationsResponse]) -> Void) {
         
