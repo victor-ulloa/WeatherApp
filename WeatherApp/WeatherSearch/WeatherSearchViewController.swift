@@ -232,6 +232,8 @@ class WeatherSearchViewController: UIViewController, UISearchResultsUpdating, UI
                     return
                 }
                 
+                self?.searchController.isActive = false
+                
                 self?.noLocationLabel.isHidden = true
                 self?.mainScrollView.isHidden = false
                 
